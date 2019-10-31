@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>tiny</title>
+    <script th:src="@{/tinymce/jquery.js}"></script>
     <script th:src="@{/tinymce/tinymce.min.js}"></script>
-    <script th:src="@{/tinymce/jquery.tinymce.min.js}"></script>
+
 </head>
 <body>
 <form method="post" action="/result">
@@ -18,10 +19,9 @@
         language:'zh_CN',//注意大小写
         height : 700,
         width: 700,
-        plugins: 'image | link',
-        toolbar: 'image | link' ,
+        plugins: "image, link",
         images_upload_url: '/uploadImg',
-        "toolbar1": "insertfile undo redo | formatselect | bullist numlist | link unlink | uploadimg image media | fullscreen ",
+        "toolbar1": "insertfile undo redo | formatselect | link unlink | image ",
         "toolbar2": "fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | removeformat"
     });
 </script>
