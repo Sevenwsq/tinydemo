@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>tiny</title>
+    <script th:src="@{/tinymce/tinymce.min.js}"></script>
+    <script th:src="@{/tinymce/jquery.tinymce.min.js}"></script>
+</head>
+<body>
+<form method="post" action="/result">
+    <textarea id="mytextarea" name="content">尽情书写吧！！！</textarea>
+    <input type="submit" value="提交">
+</form>
+</body>
+<script>
+    tinymce.init({
+        selector: '#mytextarea',
+        language:'zh_CN',//注意大小写
+        height : 700,
+        width: 700,
+        plugins: 'image | link',
+        toolbar: 'image | link' ,
+        images_upload_url: '/uploadImg',
+        "toolbar1": "insertfile undo redo | formatselect | bullist numlist | link unlink | uploadimg image media | fullscreen ",
+        "toolbar2": "fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | removeformat"
+    });
+</script>
+</html>
